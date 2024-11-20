@@ -1,0 +1,10 @@
+{
+  "foods": [
+    {
+      "id": 1,
+      "guru": "ahmad",
+      "mapel": "B ing",
+      "gender": "lanang"
+    }
+  ]
+}

@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom"; // Mengimpor komponen untuk routing
+import Home from "./Home";
+// import Datadiri from "./Datadiri";
 
+import TambahData from "./TambahData";
+import UbahData from "./UbahData";
+import DataGuru from "./DataGuru";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {" "}
+      {/* Membungkus seluruh konten aplikasi dalam elemen div */}
+      <Routes>
+        {" "}
+        {/* Membuat rute (route) untuk navigasi */}
+        {/* Jika pengguna mengunjungi root path ('/'), maka akan diarahkan ke '/DataDiri' */}
+        {/* <Route path="/" element={<Navigate to="/Minuman" />} /> */}
+        <Route path="/" element={<Navigate to="/DataGuru" />} />
+        {/* <Route path="/" element={<Navigate to="/Dashboard" />} /> */}
+        {/* Jika pengguna mengunjungi '/DataDiri', tampilkan komponen DataDiri */}
+        {/* <Route path="/Home" element={<Home />} /> */}
+        {/* <Route path="/Datadiri" element={<Datadiri />} /> */}
+        <Route path="/Home" element={<Home />} />
+        <Route path="/TambahData" element={<TambahData />} />
+        <Route path="/UbahData/:id" element={<UbahData />} />
+        <Route path="/DataGuru" element={<DataGuru />} />
+        {/* <Route path="/tambah" element={<Tambah />} /> */}
+      </Routes>
     </div>
   );
 }
 
-export default App;
+export default App; // Mengekspor komponen App agar bisa digunakan di tempat lain
