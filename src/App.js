@@ -6,6 +6,9 @@ import Home from "./Home";
 import TambahData from "./TambahData";
 import UbahData from "./UbahData";
 import DataGuru from "./DataGuru";
+import DataSiswa from "./DataSiswa";
+import TambahDataSiswa from "./TambahDataSiswa";
+import UbahDataSiswa from "./UbahDataSiswa";
 function App() {
   return (
     <div className="App">
@@ -16,7 +19,7 @@ function App() {
         {/* Membuat rute (route) untuk navigasi */}
         {/* Jika pengguna mengunjungi root path ('/'), maka akan diarahkan ke '/DataDiri' */}
         {/* <Route path="/" element={<Navigate to="/Minuman" />} /> */}
-        <Route path="/" element={<Navigate to="/DataGuru" />} />
+        <Route path="/" element={<Navigate to="/Home" />} />
         {/* <Route path="/" element={<Navigate to="/Dashboard" />} /> */}
         {/* Jika pengguna mengunjungi '/DataDiri', tampilkan komponen DataDiri */}
         {/* <Route path="/Home" element={<Home />} /> */}
@@ -25,6 +28,9 @@ function App() {
         <Route path="/TambahData" element={<TambahData />} />
         <Route path="/UbahData/:id" element={<UbahData />} />
         <Route path="/DataGuru" element={<DataGuru />} />
+        <Route path="/DataSiswa" element={<DataSiswa />} />
+        <Route path="/UbahDataSiswa/:id" element={<UbahDataSiswa />} />
+        <Route path="/TambahDataSiswa" element={<TambahDataSiswa />} />
         {/* <Route path="/tambah" element={<Tambah />} /> */}
       </Routes>
     </div>

@@ -1,10 +1,145 @@
 {
   "foods": [
     {
-      "id": 1,
-      "guru": "ahmad",
+      "id": "1",
+      "no": 2,
+      "guru": "ahmaddd",
       "mapel": "B ing",
       "gender": "lanang"
+    },
+    {
+      "id": "cfcf",
+      "guru": "bismaa",
+      "mapel": "ipa",
+      "gender": "laki-laki"
+    },
+    {
+      "id": "1a54",
+      "guru": "freya",
+      "mapel": "b. inggris",
+      "gender": "perempuan"
+    },
+    {
+      "id": "5b53",
+      "guru": "yanto",
+      "mapel": "ips",
+      "gender": "laki-laki"
+    },
+    {
+      "id": "c84f",
+      "guru": "pak bahar",
+      "mapel": "kejuruan",
+      "gender": "laki-laki"
+    },
+    {
+      "id": "0a73",
+      "guru": "bu rifa",
+      "mapel": "all roll",
+      "gender": "perempuan"
+    },
+    {
+      "id": "c994",
+      "guru": "bu nada",
+      "mapel": "ipas",
+      "gender": "perempuan"
+    },
+    {
+      "id": "82fe",
+      "guru": "pak riyian",
+      "mapel": "ppkn",
+      "gender": "laki-laki"
+    },
+    {
+      "id": "f1a1",
+      "guru": "pak sugionoo",
+      "mapel": "b. inggris",
+      "gender": "laki-laki"
+    },
+    {
+      "id": "771b",
+      "guru": "bu lalaa",
+      "mapel": "seni",
+      "gender": "perempuan"
+    },
+    {
+      "id": "44cb",
+      "guru": "buydi",
+      "mapel": "ipa",
+      "gender": "lanang"
+    }
+  ],
+  "students": [
+    {
+      "nama": "ahmad",
+      "kelas": "XI",
+      "kejuruan": "TKJ",
+      "id": "1"
+    },
+    {
+      "nama": "BIMAA",
+      "kelas": "X",
+      "kejuruan": "TKJ",
+      "id": "505c"
+    },
+    {
+      "id": "3ded",
+      "nama": "Bisma",
+      "kelas": "X",
+      "kejuruan": "TKJ"
+    },
+    {
+      "nama": "zidan",
+      "kelas": "XI",
+      "kejuruan": "TKJ",
+      "id": "cfb9"
+    },
+    {
+      "id": "e178",
+      "nama": "RISKI",
+      "kelas": "X",
+      "kejuruan": "TKJ"
+    },
+    {
+      "id": "4b75",
+      "nama": "IZZUL",
+      "kelas": "X",
+      "kejuruan": "TKJ"
+    },
+    {
+      "id": "3edb",
+      "nama": "ESA",
+      "kelas": "XI",
+      "kejuruan": "TKJ"
+    },
+    {
+      "id": "b623",
+      "nama": "DIMAS",
+      "kelas": "X",
+      "kejuruan": "TKJ"
+    },
+    {
+      "nama": "panjol",
+      "kelas": "XI",
+      "kejuruan": "TKR",
+      "id": "a831"
+    },
+    {
+      "id": "ee34",
+      "nama": "TANJUNG",
+      "kelas": "X",
+      "kejuruan": "TURU"
+    },
+    {
+      "id": "eb56",
+      "nama": "Avecenna",
+      "kelas": "XI",
+      "kejuruan": "Programer"
+    },
+    {
+      "id": "114d",
+      "nama": "ESA",
+      "kelas": "XI",
+      "kejuruan": "TKJ"
     }
   ]
 }

@@ -13,21 +13,25 @@ import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close"; // Add Close Icon
+import CloseIcon from "@mui/icons-material/Close"; // Menambahkan ikon Close
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home"; // Ikon Home
+import SchoolIcon from "@mui/icons-material/School"; // Ikon School
+import PersonIcon from "@mui/icons-material/Person"; // Ikon Person (Guru)
 
+// Pengaturan Drawer
 const drawerWidth = 240;
 const navItems = [
-  { label: "HOME", path: "/Home" },
-  { label: "DATA GURU", path: "/DataGuru" },
-  { label: "DATA SISWA", path: "/DataSiswa" },
+  { label: "HOME", path: "/Home", icon: <HomeIcon /> },
+  { label: "DATA GURU", path: "/DataGuru", icon: <SchoolIcon /> },
+  { label: "DATA SISWA", path: "/DataSiswa", icon: <PersonIcon /> },
 ];
 
 function SidebarLayout(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // State to control sidebar visibility
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // State untuk mengontrol visibilitas sidebar
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -42,17 +46,17 @@ function SidebarLayout(props) {
       sx={{
         width: drawerWidth,
         textAlign: "center",
-        backgroundColor: "#2C3850", // Sidebar background color
+        backgroundColor: "#607ABD", // Warna latar belakang Sidebar (diperbarui)
         color: "#fff",
         height: "100%",
-        transition: "transform 0.3s ease-in-out", // Smooth transition for drawer
+        transition: "transform 0.3s ease-in-out", // Transisi halus untuk drawer
       }}
     >
       <Typography
         variant="h6"
         sx={{
           my: 2,
-          color: "#F299AF", // Color for the sidebar header
+          color: "#A3B1EE", // Warna teks header Sidebar (diperbarui)
           fontWeight: "bold",
           fontFamily: "'Roboto', sans-serif",
         }}
@@ -69,8 +73,8 @@ function SidebarLayout(props) {
               sx={{
                 textAlign: "center",
                 "&:hover": {
-                  backgroundColor: "#F299AF", // Hover effect background
-                  color: "#2C3850", // Hover effect text color
+                  backgroundColor: "#A3B1EE", // Efek hover latar belakang (diperbarui)
+                  color: "#607ABD", // Efek hover warna teks (diperbarui)
                 },
                 padding: "12px",
               }}
@@ -81,6 +85,31 @@ function SidebarLayout(props) {
           </ListItem>
         ))}
       </List>
+
+      {/* Bagian Baru: Data Guru Dan Siswa */}
+      <Divider sx={{ my: 2 }} />
+      <Typography
+        variant="subtitle1"
+        sx={{
+          color: "#A3B1EE", // Warna teks (diperbarui)
+          fontWeight: "bold",
+          fontFamily: "'Roboto', sans-serif",
+        }}
+      >
+        Data Guru Dan Siswa
+      </Typography>
+      <Divider sx={{ my: 2 }} />
+
+      <Typography
+        variant="subtitle1"
+        sx={{
+          color: "#A3B1EE", // Warna teks (diperbarui)
+          fontWeight: "bold",
+          fontFamily: "'Roboto', sans-serif",
+        }}
+      >
+        PROJECT REACT
+      </Typography>
     </Box>
   );
 
@@ -94,8 +123,8 @@ function SidebarLayout(props) {
         position="fixed"
         sx={{
           zIndex: (theme) => theme.zIndex.drawer + 1,
-          backgroundColor: "#2C3850", // AppBar background color
-          boxShadow: "0 4px 8px rgba(0,0,0,0.2)", // Subtle shadow effect
+          backgroundColor: "#607ABD", // Warna latar belakang AppBar (diperbarui)
+          boxShadow: "0 4px 8px rgba(0,0,0,0.2)", // Efek bayangan halus
         }}
       >
         <Toolbar>
@@ -119,23 +148,38 @@ function SidebarLayout(props) {
               flexGrow: 1,
               fontFamily: '"Roboto", sans-serif',
               fontWeight: "bold",
-              color: "#F299AF", // AppBar text color
+              color: "#A3B1EE", // Warna teks AppBar (diperbarui)
               transition: "color 0.3s ease",
-              "&:hover": { color: "#F299AF" }, // Hover effect on title
+              "&:hover": { color: "#A3B1EE" }, // Efek hover pada judul
             }}
           >
-            Bisma Putra Pratama👾
+            Bisma Putra Pratama
           </Typography>
-          {/* Add the button for larger screens */}
+          <Typography
+            variant="h5"
+            noWrap
+            component="div"
+            sx={{
+              flexGrow: 1,
+              fontFamily: '"Roboto", sans-serif',
+              fontWeight: "bold",
+              color: "#A3B1EE", // Warna teks AppBar (diperbarui)
+              transition: "color 0.3s ease",
+              "&:hover": { color: "#A3B1EE" }, // Efek hover pada judul
+            }}
+          >
+            SMK BINA NUSANTARA
+          </Typography>
+          {/* Tambahkan tombol untuk layar yang lebih besar */}
           <Button
             color="inherit"
             onClick={handleSidebarToggle}
             sx={{
-              display: { xs: "none", sm: "inline-block" }, // Show button only on larger screens
-              transition: "background-color 0.3s ease", // Smooth background color transition
+              display: { xs: "none", sm: "inline-block" }, // Tampilkan tombol hanya di layar besar
+              transition: "background-color 0.3s ease", // Transisi halus latar belakang warna
               "&:hover": {
-                backgroundColor: "#F299AF", // Hover effect background color
-                color: "#2C3850", // Hover text color
+                backgroundColor: "#A3B1EE", // Efek hover latar belakang warna (diperbarui)
+                color: "#607ABD", // Efek hover warna teks (diperbarui)
               },
               padding: "8px 16px",
               borderRadius: "8px",
@@ -147,7 +191,7 @@ function SidebarLayout(props) {
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Drawer */}
+      {/* Drawer untuk Mobile */}
       <Drawer
         container={container}
         variant="temporary"
@@ -161,26 +205,26 @@ function SidebarLayout(props) {
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: drawerWidth,
-            backgroundColor: "#2C3850",
-            color: "#fff",
+            backgroundColor: "#F4DAEB", // Warna yang diperbarui untuk Drawer
+            color: "F4DAEB",
           },
         }}
       >
         {drawer}
       </Drawer>
 
-      {/* Permanent Drawer for larger screens */}
+      {/* Drawer permanen untuk layar yang lebih besar */}
       <Drawer
         variant="permanent"
         sx={{
-          display: { xs: "none", sm: isSidebarOpen ? "block" : "none" }, // Hide when sidebar is closed
+          display: { xs: "none", sm: isSidebarOpen ? "block" : "none" }, // Sembunyikan ketika sidebar ditutup
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: drawerWidth,
-            backgroundColor: "#2C3850",
+            backgroundColor: "#607ABD", // Warna latar belakang diperbarui
             color: "#fff",
-            transition: "transform 0.3s ease-in-out", // Smooth transition
-            boxShadow: "4px 0 10px rgba(0,0,0,0.1)", // Shadow effect
+            transition: "transform 0.10s ease-in-out", // Transisi halus
+            boxShadow: "4px 0 10px rgba(0,0,0,0.1)", // Efek bayangan
           },
         }}
         open
@@ -188,19 +232,19 @@ function SidebarLayout(props) {
         {drawer}
       </Drawer>
 
-      {/* Main Content */}
-      <Box
+      {/* Konten utama */}
+      {/* <Box
         component="main"
         sx={{
           flexGrow: 1,
           p: 3,
-          ml: { sm: `${drawerWidth}px` }, // Add space for the sidebar
-          transition: "margin 0.3s ease", // Smooth transition when sidebar opens/closes
+          ml: { sm: `${drawerWidth}px` }, // Menambahkan ruang untuk sidebar
+          transition: "margin 0.3s ease", // Transisi halus saat sidebar terbuka/tertutup
         }}
       >
         <Toolbar />
-        <Typography paragraph>INI DATA ANJAY ROR🦖</Typography>
-      </Box>
+        MANEJEMEN DATA SEDERHANA
+      </Box> */}
     </Box>
   );
 }

@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Box from "@mui/material/Box";
 import EditIcon from "@mui/icons-material/Edit"; // Import Edit icon
 import DeleteIcon from "@mui/icons-material/Delete"; // Import Delete icon
-// import SideBar from "./componet/SideBar";
+import SideBar from "./componet/SideBar";
 // Sidebar width (match with the Navbar's sidebar width)
 const drawerWidth = 240;
 
@@ -96,16 +96,17 @@ export default function DataGuru() {
   return (
     <Box sx={{ display: "flex" }}>
       {/* Tambahkan komponen SidBar jika ada */}
-      {/* <SideBar /> */}
+      <SideBar />
 
       <Box
         component="main"
         sx={{
           flexGrow: 1,
-          ml: { sm: `${drawerWidth}px` }, // Adjust for sidebar width
-          p: 3,
-          backgroundColor: "#f9f9f9", // Optional: for better contrast
+          ml: { sm: `${drawerWidth}px` }, // Sesuaikan jarak untuk sidebar
+          p: 10,
+          backgroundColor: "#f9f9f9",
           minHeight: "100vh",
+          position: "relative", // Tambahkan ini jika perlu
         }}
       >
         <Button
@@ -114,7 +115,7 @@ export default function DataGuru() {
           onClick={handleAddFood}
           sx={{ marginBottom: 2 }}
         >
-          Tambah Data
+          Tambah Data Guru
         </Button>
 
         <TableContainer component={Paper}>
