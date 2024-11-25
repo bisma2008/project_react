@@ -14,12 +14,6 @@
       "gender": "laki-laki"
     },
     {
-      "id": "1a54",
-      "guru": "freya",
-      "mapel": "b. inggris",
-      "gender": "perempuan"
-    },
-    {
       "id": "5b53",
       "guru": "yanto",
       "mapel": "ips",
@@ -65,6 +59,24 @@
       "id": "44cb",
       "guru": "buydi",
       "mapel": "ipa",
+      "gender": "lanang"
+    },
+    {
+      "id": "59a7",
+      "guru": "bang dim",
+      "mapel": "olahraga",
+      "gender": "laki-laki"
+    },
+    {
+      "id": "15d2",
+      "guru": "yanto",
+      "mapel": "olahraga",
+      "gender": "laki-laki"
+    },
+    {
+      "id": "73d6",
+      "guru": "resaa",
+      "mapel": "mekanik",
       "gender": "lanang"
     }
   ],
@@ -136,10 +148,10 @@
       "kejuruan": "Programer"
     },
     {
-      "id": "114d",
-      "nama": "ESA",
-      "kelas": "XI",
-      "kejuruan": "TKJ"
+      "id": "b798",
+      "nama": "bim",
+      "kelas": "10",
+      "kejuruan": "tkj"
     }
   ]
 }

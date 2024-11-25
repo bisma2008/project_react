@@ -5,49 +5,61 @@ import PersonIcon from "@mui/icons-material/Person"; // Ikon Person (Guru)
 import SchoolIcon from "@mui/icons-material/School"; // Ikon School (Siswa)
 import SideBar from "./componet/SideBar"; // Mengimpor komponen SideBar
 
+// Komponen utama untuk halaman Home
 const Home = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook untuk navigasi antar halaman
 
+  // Fungsi navigasi ke halaman Data Guru
   const handleGoToDataGuru = () => {
     navigate("/DataGuru");
   };
 
+  // Fungsi navigasi ke halaman Data Siswa
   const handleGoToDataSiswa = () => {
     navigate("/DataSiswa");
   };
 
   return (
     <Box
+      // Kontainer utama dengan gaya responsif
       sx={{
         display: "flex",
-        minHeight: "100vh",
-        backgroundColor: "#EFEAD8",
+        flexDirection: { xs: "column", sm: "row" }, // Responsif: Kolom di layar kecil, baris di layar besar
+        minHeight: "100vh", // Tinggi minimal layar penuh
+        backgroundColor: "#EFEAD8", // Warna latar belakang
         padding: 2,
       }}
     >
-      {/* Bagian Sidebar */}
-      <SideBar sx={{ width: 250 }} />{" "}
-      {/* Menentukan lebar tetap untuk sidebar */}
-      {/* Bagian Konten Utama */}
+      {/* Sidebar */}
+      <SideBar
+        sx={{
+          width: { xs: "100%", sm: 250 }, // Sidebar penuh di layar kecil
+          flexShrink: 0, // Sidebar tidak mengecil
+        }}
+      />
+
+      {/* Konten Utama */}
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          flex: 1,
-          padding: 2,
+          flexDirection: "column", // Elemen disusun secara vertikal
+          alignItems: "center", // Elemen sejajar secara horizontal
+          justifyContent: "center", // Elemen sejajar secara vertikal
+          flex: 1, // Mengisi ruang yang tersedia
+          padding: { xs: 2, sm: 5 }, // Padding responsif
         }}
       >
+        {/* Teks Selamat Datang */}
         <Typography
           variant="h4"
           gutterBottom
           sx={{
-            opacity: 0,
-            animation: "fadeIn 1s forwards",
-            fontWeight: "bold",
-            letterSpacing: 1.2,
-            marginBottom: 3,
+            textAlign: "center", // Teks rata tengah
+            fontWeight: "bold", // Teks tebal
+            letterSpacing: 1.2, // Jarak antar huruf
+            marginBottom: 3, // Jarak bawah
+            animation: "fadeIn 1s forwards", // Animasi fade-in
+            opacity: 0, // Awalnya tidak terlihat
             "@keyframes fadeIn": {
               "0%": { opacity: 0 },
               "100%": { opacity: 1 },
@@ -57,78 +69,80 @@ const Home = () => {
           Selamat Datang di Manajemen Data Sederhana Bisma
         </Typography>
 
+        {/* Kontainer Tombol */}
         <Box
           sx={{
             display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 2,
-            padding: 1.5,
-            borderRadius: 3,
-            backgroundColor: "white",
-            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.1)",
+            flexDirection: "column", // Tombol disusun secara vertikal
+            gap: 2, // Jarak antar tombol
+            padding: { xs: 2, sm: 3 }, // Padding responsif
+            borderRadius: 3, // Sudut kontainer melengkung
+            backgroundColor: "white", // Latar belakang putih
+            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.1)", // Bayangan kontainer
             width: "100%",
-            maxWidth: 600, // Memastikan tampilannya terpusat dan tidak melebar terlalu lebar
+            maxWidth: 600, // Lebar maksimum kontainer
           }}
         >
+          {/* Tombol Data Guru */}
           <Button
             variant="contained"
             color="primary"
             sx={{
-              width: "100%",
-              padding: "12px 20px",
-              boxShadow: "0 6px 12px rgba(0, 0, 0, 0.2)",
-              borderRadius: "50px",
-              background: "linear-gradient(45deg, #6A5ACD, #4B8BF5)",
-              fontWeight: "bold",
+              width: "100%", // Lebar penuh
+              padding: "12px 20px", // Padding tombol
+              borderRadius: "50px", // Sudut melengkung
+              background: "linear-gradient(45deg, #6A5ACD, #4B8BF5)", // Gradien warna
+              fontWeight: "bold", // Teks tebal
               transition:
-                "transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease",
+                "transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease", // Animasi transisi
               "&:hover": {
-                transform: "scale(1.05)",
-                boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
-                background: "linear-gradient(45deg, #4B8BF5, #6A5ACD)",
+                transform: "scale(1.05)", // Membesar saat hover
+                boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)", // Bayangan lebih besar saat hover
+                background: "linear-gradient(45deg, #4B8BF5, #6A5ACD)", // Gradien berubah
               },
             }}
-            onClick={handleGoToDataGuru}
-            startIcon={<SchoolIcon />}
+            onClick={handleGoToDataGuru} // Navigasi saat diklik
+            startIcon={<SchoolIcon />} // Ikon di tombol
           >
             Data Guru
           </Button>
 
+          {/* Tombol Data Siswa */}
           <Button
             variant="contained"
             color="secondary"
             sx={{
-              width: "100%",
-              padding: "12px 20px",
-              boxShadow: "0 6px 12px rgba(0, 0, 0, 0.2)",
-              borderRadius: "50px",
-              background: "linear-gradient(45deg, #FF6F61, #FF8C00)",
-              fontWeight: "bold",
+              width: "100%", // Lebar penuh
+              padding: "12px 20px", // Padding tombol
+              borderRadius: "50px", // Sudut melengkung
+              background: "linear-gradient(45deg, #FF6F61, #FF8C00)", // Gradien warna
+              fontWeight: "bold", // Teks tebal
               transition:
-                "transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease",
+                "transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease", // Animasi transisi
               "&:hover": {
-                transform: "scale(1.05)",
-                boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
-                background: "linear-gradient(45deg, #FF8C00, #FF6F61)",
+                transform: "scale(1.05)", // Membesar saat hover
+                boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)", // Bayangan lebih besar saat hover
+                background: "linear-gradient(45deg, #FF8C00, #FF6F61)", // Gradien berubah
               },
             }}
-            onClick={handleGoToDataSiswa}
-            startIcon={<PersonIcon />}
+            onClick={handleGoToDataSiswa} // Navigasi saat diklik
+            startIcon={<PersonIcon />} // Ikon di tombol
           >
             Data Siswa
           </Button>
         </Box>
 
+        {/* Teks Footer */}
         <Typography
           variant="h5"
           sx={{
-            marginTop: 3,
-            fontWeight: "bold",
-            color: "#333",
-            letterSpacing: 1.2,
-            opacity: 0,
-            animation: "slideIn 1s forwards",
+            marginTop: 3, // Jarak atas
+            fontWeight: "bold", // Teks tebal
+            color: "#333", // Warna teks
+            letterSpacing: 1.2, // Jarak antar huruf
+            textAlign: "center", // Teks rata tengah
+            opacity: 0, // Awalnya tidak terlihat
+            animation: "slideIn 1s forwards", // Animasi slide-in
             "@keyframes slideIn": {
               "0%": { opacity: 0, transform: "translateY(20px)" },
               "100%": { opacity: 1, transform: "translateY(0)" },
@@ -137,22 +151,24 @@ const Home = () => {
         >
           SMK BINA NUSANTARA DEMAK
         </Typography>
+
         <Typography
           variant="h6"
           sx={{
-            marginTop: 3,
-            fontWeight: "bold",
-            color: "#333",
-            letterSpacing: 1.2,
-            opacity: 0,
-            animation: "slideIn 1s forwards",
+            marginTop: 1, // Jarak atas
+            fontWeight: "bold", // Teks tebal
+            color: "#333", // Warna teks
+            letterSpacing: 1.2, // Jarak antar huruf
+            textAlign: "center", // Teks rata tengah
+            opacity: 0, // Awalnya tidak terlihat
+            animation: "slideIn 1s forwards", // Animasi slide-in
             "@keyframes slideIn": {
               "0%": { opacity: 0, transform: "translateY(20px)" },
               "100%": { opacity: 1, transform: "translateY(0)" },
             },
           }}
         >
-          SILAHKAN TEKAN UNTUK MENU SELANJUTNYA
+          Silahkan Tekan Untuk Menu Selanjutnya
         </Typography>
       </Box>
     </Box>

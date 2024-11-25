@@ -15,6 +15,7 @@ import Box from "@mui/material/Box";
 import EditIcon from "@mui/icons-material/Edit"; // Import Edit icon
 import DeleteIcon from "@mui/icons-material/Delete"; // Import Delete icon
 import SideBar from "./componet/SideBar";
+import TextField from "@mui/material/TextField"; // Import TextField for search
 
 // Sidebar width (match with the Navbar's sidebar width)
 const drawerWidth = 240;
@@ -42,6 +43,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function DataSiswa() {
   const [students, setStudents] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(""); // State for search query
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -94,6 +96,14 @@ export default function DataSiswa() {
     navigate(`/UbahDataSiswa/${id}`);
   };
 
+  // Filter students based on search query
+  const filteredStudents = students.filter(
+    (student) =>
+      student.nama.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.kelas.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.kejuruan.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <Box sx={{ display: "flex" }}>
       <SideBar />
@@ -117,6 +127,16 @@ export default function DataSiswa() {
           Tambah Data Siswa
         </Button>
 
+        {/* Search Bar */}
+        <TextField
+          label="Cari Siswa"
+          variant="outlined"
+          fullWidth
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)} // Update search query
+          sx={{ marginBottom: 3 }}
+        />
+
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
@@ -129,7 +149,7 @@ export default function DataSiswa() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {students.map((student, index) => (
+              {filteredStudents.map((student, index) => (
                 <StyledTableRow key={student.id}>
                   <StyledTableCell component="th" scope="row">
                     {index + 1}
